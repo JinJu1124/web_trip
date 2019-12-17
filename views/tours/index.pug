@@ -1,0 +1,27 @@
+extends ../layout
+
+include ../includes/_paginate
+
+block content
+  .container
+
+    h1.main-title 
+      | Tour
+      if tours.total > 0
+        .small Total #{tours.total} tour(s)
+
+    if tours.total <= 0 
+      .alert.alert-info No tours available yet
+    else
+      .tours
+        each tour in tours.docs
+          .tour
+            a.title(href=`/tours/${tour.id}`)= tour.title
+            include _tour
+
+      +paginate(tours, '/tours', query)
+
+    hr
+    a.btn.btn-primary(href='/tours/new') Upload Tour
+
+    a.btn.btn-primary.my-2(onClick="location.href='https://www.myrealtrip.com'") More Trip?!

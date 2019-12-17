@@ -1,0 +1,32 @@
+.content <여행상품이름>
+.content= tour.tour_name
+.content 
+    | 
+.content <여행상품설명>
+.content= tour.content
+
+.content 
+    | 
+.content <여행상품가격>
+.content= tour.price
+
+
+.tags.badges
+  each tag in tour.tags
+    span.badge.badge-phill.badge-secondary= tag
+    | 
+.row
+  .col-sm
+    .numbers.
+
+      #[span.number.num-answers= tour.numAnswers] review,
+      #[span.number.num-views= tour.numReads] reads
+  .col-sm
+    .author
+      | upload on #{moment(tour.createdAt).format('YYYY-MM-DD')}
+      if tour.author
+        | 
+        | by #[a(href=`/users/${tour.author.id}`)= tour.author.name] 
+
+
+

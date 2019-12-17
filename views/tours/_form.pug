@@ -1,0 +1,15 @@
+.form-group
+  label(for="title") Where?
+  input.form-control(type="text", name="title", id = "where",  value=tour.title)
+.form-group
+  label(for="tour") Tour Name?
+  input.form-control(type="text", name="tour_name", id = "tour_name",  value=tour.tour_name)
+.form-group
+  label(for="tour") Content
+  textarea.form-control(name="content", rows="5", placeholder="설명과 여행코스를 자세히 적어주세요.", value= tour.content)
+.form-group
+  label(for="tour") Price
+  input.form-control(type="number", name="price", id = "price", value=tour.price)
+.form-group
+  label(for="tags") Tags
+  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=tour.tags ? tour.tags.join(" ") : "")

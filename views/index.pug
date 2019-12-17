@@ -1,0 +1,62 @@
+extends layout
+
+block hero-unit
+  section.jumbotron.text-center
+    .container
+      h1 Trip or Treat!
+      p
+      p 여러분들의 즐거운 여행을 보장합니다!
+      p 떠나요~ 해외로~ 모든걸~ 훌훌 버리고~ 다같이 렛츠 기릿 기릿 기릿~!
+      p
+        a.btn.btn-primary.my-2(href='/users/new') Sign up
+
+
+block search
+  .container
+    form.form-inline.search-input-group(action='/tours', method='GET')
+      i.fa.fa-search
+      input.form-control.mr-sm-2(type='text', name='term', placeholder='Search', aria-label='Search', value=term)
+
+
+block content
+  .container
+    h3.main-title 이번주 추천 상품
+    .row
+      .col-md-4
+        .card.mb-4.shadow-sm
+          svg.bd-placeholder-img.card-img-top(width='100%' height='225' xmlns='http://www.w3.org/2000/svg' preserveaspectratio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: Thumbnail')
+            title 유럽
+            rect(width='100%' height='100%' fill='#55595c')
+            text(x='46%' y='50%' fill='#eceeef' dy='.3em') 유럽 
+          .card-body
+            p.card-text
+              | 유럽에 가고싶은 사람~!
+            .d-flex.justify-content-between.align-items-center
+              .btn-group
+                button.btn.btn-sm.btn-outline-secondary(type='button', onClick="location.href='https://www.myrealtrip.com/offers/68567'") 상세히
+
+      .col-md-4
+        .card.mb-4.shadow-sm
+          svg.bd-placeholder-img.card-img-top(width='100%' height='225' xmlns='http://www.w3.org/2000/svg' preserveaspectratio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: Thumbnail')
+            title 동남아시아
+            rect(width='100%' height='100%' fill='#55595c')
+            text(x='40%' y='50%' fill='#eceeef' dy='.3em') 동남아시아 
+          .card-body
+            p.card-text
+              | 동남아시아에 가고싶은 사람~!
+            .d-flex.justify-content-between.align-items-center
+              .btn-group
+                button.btn.btn-sm.btn-outline-secondary(type='button', onClick="location.href='https://www.myrealtrip.com/q/%EB%8F%99%EB%82%A8%EC%95%84%EC%8B%9C%EC%95%84?q=%EB%8F%99%EB%82%A8%EC%95%84%EC%8B%9C%EC%95%84'") 상세히
+
+      .col-md-4
+        .card.mb-4.shadow-sm
+          svg.bd-placeholder-img.card-img-top(width='100%' height='225' xmlns='http://www.w3.org/2000/svg' preserveaspectratio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: Thumbnail')
+            title 대한민국
+            rect(width='100%' height='100%' fill='#55595c')
+            text(x='42%' y='50%' fill='#eceeef' dy='.3em') 대한민국 
+          .card-body
+            p.card-text
+              | 대한민국에 가고싶은 사람~!
+            .d-flex.justify-content-between.align-items-center
+              .btn-group
+                button.btn.btn-sm.btn-outline-secondary(type='button', onClick="location.href='https://www.myrealtrip.com/countries?key_name=Korea,%20Republic%20of&q=%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD'") 상세히

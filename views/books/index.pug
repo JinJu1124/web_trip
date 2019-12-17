@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title Book List
+    
+    table.table.table-hover
+      thead
+        tr
+          th 상품 이름
+          th 예약 날짜
+          th 인원
+          th 가격
+          th 
+      tbody
+          tr
+            td= book.tour_name
+            td= book.bookAt
+            td= book.people
+            td= book.price
+            td 
+          
+
+    
+    a.btn.btn-primary(href='/books/new') #[i.fa.fa-plus] Let's Book!

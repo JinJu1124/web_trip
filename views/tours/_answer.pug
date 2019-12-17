@@ -1,0 +1,12 @@
+.answer.card
+
+  .card-body
+    .content= answer.content
+  .row.card-body
+    .col-sm
+    .col-sm.text-right
+      .author
+        | comment on #{moment(answer.createdAt).format('YYYY-MM-DD')}
+        if answer.author
+          | 
+          | by #[a(href=`/users/${answer.author.id}`)= answer.author.name]

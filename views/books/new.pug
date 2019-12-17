@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title Book
+    form(action='/books', method='POST')
+      .form-group
+        label(for='tour_name') 상품 이름
+        input.form-control(type='text', id='tour_name', name='tour_name', placeholder='여행 상품 이름을 적어주세요.')
+      .form-group
+        label(for='people') 인원
+        input.form-control(type='number', id='people', name='people', placeholder='여행 인원')
+      .form-group
+        label(for='price') 가격
+        input.form-control(type='number', id='price', name='price', placeholder='여행 상품 해당 금액')
+      .form-group
+        label(for='bookAt') 예약 날짜
+        input.form-control(type='text', id='bookAt', name='bookAt', placeholder='여행 갈 날짜')
+
+      a.btn.btn-outline-secondary(href='/books/index') List
+      | 
+      button.btn.btn-primary(type='submit') Book 
